@@ -5,23 +5,35 @@
   "author": "Jleguim",
   "main": "./dist/main.js",
   "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build && tsc -b",
+    "dev": "npm run build && npm-run-all --parallel dev:react dev:electron",
+    "package": "npm run build && electron-forge package",
+    "make": "npm run build && electron-forge make",
+    "publish": "npm run build && electron-forge publish",
+    "dev:react": "vite",
+    "dev:electron": "cross-env NODE_ENV=dev electron-forge start"
+  },
   "devDependencies": {
     "@electron-forge/cli": "^7.6.0",
     "@electron-forge/maker-squirrel": "^7.6.0",
     "@electron-forge/maker-zip": "^7.6.0",
     "@electron-forge/publisher-github": "^7.6.0",
     "@electron-forge/shared-types": "^7.6.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "cross-env": "^7.0.3",
     "electron": "^33.2.1",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.7.2"
-  },
-  "scripts": {
-    "dev": "tsc -b && electron-forge start",
-    "forge:make": "electron-forge make",
-    "forge:publish": "electron-forge publish"
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

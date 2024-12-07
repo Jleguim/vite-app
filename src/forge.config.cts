@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 // @ts-ignore
 import pkg from './package.json'
 
@@ -30,6 +33,7 @@ const config = {
           name: 'vite-app',
         },
         draft: true,
+        authToken: process.env.GITHUB_TOKEN,
       },
     },
   ],
