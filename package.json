@@ -7,11 +7,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "vite build && tsc -b",
     "dev": "npm run build && npm-run-all --parallel dev:react dev:electron",
     "package": "npm run build && electron-forge package",
     "make": "npm run build && electron-forge make",
     "publish": "npm run build && electron-forge publish",
+    "build": "vite build && tsc -b",
     "dev:react": "vite",
     "dev:electron": "cross-env NODE_ENV=dev electron-forge start"
   },
@@ -24,9 +24,12 @@
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
     "cross-env": "^7.0.3",
     "electron": "^33.2.1",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2",
     "vite": "^6.0.3"
   },
