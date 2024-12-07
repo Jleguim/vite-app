@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "outDir": "./",
+    "tsBuildInfoFile": "./node_modules/.tmp/forge.tsbuildinfo",
+
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/forge.config.cts"],
+  "exclude": []
+}
